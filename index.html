@@ -1,33 +1,79 @@
 <!doctype html>
 <html lang="en">
-
+<!-- 
+   /*
+    * XCL Theme PicoCSS
+    *
+    * @version   2.3.2
+    * @author    Nuno Luciano ( https://github.com/gigamaster )
+    * @copyright 2005-2022 The XOOPSCube Project, author
+    * @license   BSD
+    * @link      https://github.com/xoopscube
+    */
+-->
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Company example • Pico.css</title>
-    <meta name="description" content="A classic company or blog layout with a sidebar. Built with Pico CSS.">
+    <!--  <meta charset="<{$xoops_charset}>">-->
+    <title>XCL Theme built with PicoCSS for XOOPSCube</title>
+    <meta name="description" content="XCL Theme built with PicoCSS for XOOPSCube Web Application Platform and Content Management System">
+    <!--  <meta name="description" content="A classic company or blog layout with a sidebar. Built with Pico CSS.">-->
+    <meta name="robots" content="index,follow">
+    <meta name="keywords" content="free, theme, template, css, code, component, design, html, single file component, open source, free templates, ui, update, ux, website, wizard, wysiwyg">
+    <meta name="rating" content="general">
+    <meta name="author" content="Nuno Luciano">
+    <meta name="copyright" content="Copyright © 2022">
+    <meta name="generator" content="XOOPSCube">
+    <!-- Meta Webmaster Tools-->
+    <meta name="msvalidate.01" content="">
+    <meta name="google-site-verification" content="">
+    <meta name="yandex-verification" content="">
+    <!-- Facebook Open Graph data -->
+    <meta property="fb:app_id" content="">
+    <meta property="og:url" content="https://xoopscube-themes.github.io/xcl-picocss/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="XCL Theme built with PicoCSS for XOOPSCube">
+    <meta property="og:image" content="picocss-screenshot.png">
+    <meta property="og:description" content="XCL Theme built with PicoCSS for XOOPSCube">
+    <meta property="og:site_name" content="XCL Theme built with PicoCSS">
+    <meta property="article:author" content="Nuno Luciano">
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="XCL Theme built with PicoCSS"><!-- @site_account -->
+    <meta name="twitter:creator" content="@nunoluciano">
+    <meta name="twitter:url" content="https://xoopscube-themes.github.io/xcl-picocss/">
+    <meta name="twitter:title" content="XCL Theme built with PicoCSS">
+    <meta name="twitter:description" content="XCL Theme built with PicoCSS for XOOPSCube">
+    <meta name="twitter:image" content="picocss-screenshot.png">
+    <meta name="twitter:image:alt" content="XCL Theme built with PicoCSS">
+    <!-- HTML5 valid Data URI for fake favicon requests by Browsers -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- Mobile App favicon.ico Place in the root directory -->
+    <link rel="icon" href="https://xoopscube-themes.github.io/xcl-picocss/favicon.svg" type="image/svg+xml">
+    <link rel="alternate icon" href="https://xoopscube-themes.github.io/xcl-picocss/favicon.png" type="image/png">
     <link rel="shortcut icon" href="https://picocss.com/favicon.ico">
-    <link rel="canonical" href="https://picocss.com/examples/company/">
-
+    <!-- Request uri -->
+    <link rel="canonical" href="https://xoopscube-themes.github.io/xcl-picocss/">
     <!-- Pico.css -->
     <link rel="stylesheet" href="https://unpkg.com/@picocss/pico@latest/css/pico.min.css">
-
+    <!-- Custom styles for this example -->
     <!-- Custom styles for this example -->
     <link rel="stylesheet" href="./style.css">
     <style>
         section.content {grid-area: content;}
         aside {grid-area:side;}
-        :where(.grid, .grid-2, .grid-3, .grid-left) > div {
+        :where(.grid,.grid-2,.grid-3,.grid-left,.grid-right) > div {
             background: var(--card-background-color);
             border:1px solid var(--muted-border-color);
             border-radius: var(--border-radius);
             padding:1rem;
         }
+        :where(.container-fluid .grid-3) > div {background: transparent;border:none}
         :where(.theme-info) > div {padding:.5rem 1rem;font-size: 16px}
         main div.grid {grid-template-areas:"content side";}
         .grid-custom {display:grid;column-gap: calc(var(--spacing) * 3);grid-template-areas:"side content";}
         @media (max-width: 768px){
-            .grid, .grid-2, .grid-3, .grid-left,.grid-custom {grid-template-columns: 1fr;}
+            .grid,.grid-2,.grid-3,.grid-left,.grid-right,.grid-custom {grid-template-columns: 1fr;}
             main > div.grid-custom {grid-template-columns: 1fr;grid-template-areas:"side" "content";}
         }
         #customization figure~article {
@@ -89,7 +135,7 @@
         <ul>
             <li>
                 <details role="list" dir="rtl">
-                    <summary aria-haspopup="listbox" role="link" class="contrast">Theme</summary>
+                    <summary aria-haspopup="listbox" role="link" class="contrast">Color</summary>
                     <ul role="listbox">
                         <li><a href="#" data-theme-switcher="auto">Auto</a></li>
                         <li><a href="#" data-theme-switcher="light">Light</a></li>
@@ -99,16 +145,16 @@
             </li>
             <li>
                 <details role="list" dir="rtl">
-                    <summary aria-haspopup="listbox" role="link" class="contrast">Examples</summary>
+                    <summary aria-haspopup="listbox" role="link" class="contrast">About</summary>
                     <ul role="listbox">
-                        <li><a href="../preview/">Preview</a></li>
-                        <li><a href="../preview-rtl/">Right-to-left</a></li>
-                        <li><a href="../classless/">Class-less</a></li>
-                        <li><a href="../basic-template/">Basic template</a></li>
-                        <li><a href="../company/">Company</a></li>
-                        <li><a href="../google-amp/">Google Amp</a></li>
-                        <li><a href="../sign-in/">Sign in</a></li>
-                        <li><a href="../bootstrap-grid/">Bootstrap grid</a></li>
+                        <li><a href="#theme-pico">Theme</a></li>
+                        <li><a href="#customization">Customization</a></li>
+                        <li><a href="#components">Components</a></li>
+                        <li><a href="#theme-blockquote">Blockquote</a></li>
+                        <li><a href="#theme-group">Button Group</a></li>
+                        <li><a href="#theme-figure">Figure</a></li>
+                        <li><a href="#theme-grid">Grid</a></li>
+                        <li><a href="#theme-pagination">Pagination</a></li>
                     </ul>
                 </details>
             </li>
@@ -117,226 +163,159 @@
     <header class="container">
         <hgroup>
             <h1>Minimal CSS Framework for semantic HTML</h1>
-
             <h2>Elegant styles for all natives HTML elements without .classes and dark mode automatically enabled.</h2>
         </hgroup>
         <p><a href="#" role="button" onclick="event.preventDefault()">Theme XCL PicoCSS</a></p>
     </header>
-</div><!-- ./ Hero -->
+</div>
 
-<!-- Main -->
+
 <main class="container">
 
     <div class="grid grid-custom">
 
-        <section class="content">
+    <section class="content">
 
-            <hgroup>
-                <h2>Let’s keep the web design simple!</h2>
-                <h3>With just the right amount of everything, Pico is great starting point for a clean and lightweight design system.</h3>
-            </hgroup>
+        <h2>Let’s keep the web design simple!</h2>
+        <p>With just the right amount of everything, Pico is great starting point for a clean and lightweight design system.</p>
 
-            <h3>More Code, More Problems</h3>
-            <p>A great design should be minimal, fast and maintainable.</p>
-            <ul class="check">
-                <li>Most popular CSS frameworks are bulky, overkill and hard to customize without <em>hyper-overriding</em>
-                    styles.
-                </li>
-                <li>Huge stackings of wrappers and CSS classes are unnecessary for semantics elements.</li>
-                <li>Large and complex CSS file increase memory usage and cause longer style calculations.</li>
-                <li>Basics HTML elements should not require packaging large amount of dependencies.</li>
-            </ul>
+        <h3>More Code, More Problems</h3>
+        <p>A great design should be minimal, fast and maintainable.</p>
+        <ul class="check">
+            <li>Most popular CSS frameworks are bulky, overkill and hard to customize without <em>hyper-overriding</em>
+                styles.
+            </li>
+            <li>Huge stackings of wrappers and CSS classes are unnecessary for semantics elements.</li>
+            <li>Large and complex CSS file increase memory usage and cause longer style calculations.</li>
+            <li>Basics HTML elements should not require packaging large amount of dependencies.</li>
+        </ul>
 
-        <hr>
+    <hr>
 
-        <div role="document">
+    <div role="document">
 
-            <div id="customization">
-                <hgroup><h1>Customization</h1>
-                    <h2>You can customize themes with SCSS or, you can edit the CSS variables.</h2>
-                </hgroup>
-                <p>Example: <strong>pick a color!</strong></p>
+        <div id="customization">
+            <h2>Customization</h2>
+            <p>You can customize XCL themes with variables, by editing the CSS custom properties of
+                <code>/theme-name/css/_ui_root.css</code><br>
+             For example <code><i>--primary</i>: <u>var</u>(<i>--red</i>);</code></p>
+            <p><strong>Pick a color!</strong></p>
 
 
-                <article data-theme="generated" aria-label="Generated theme example">
-                    <h3><span class="name">Lime </span></h3>
-                    <form>
-                        <div class="grid">
-                            <input type="text"
-                                   name="login"
-                                   placeholder="Login"
-                                   aria-label="Login"
-                                   autocomplete="nickname"
-                                   required="">
-                            <input type="password"
-                                   name="password"
-                                   placeholder="Password"
-                                   aria-label="Password"
-                                   autocomplete="current-password"
-                                   required="">
-                            <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login
-                            </button>
-                        </div>
-                        <fieldset>
-                            <label for="remember">
-                                <input type="checkbox"
-                                       role="switch"
-                                       id="remember"
-                                       name="remember"
-                                       checked="checked"> Remember me
-                            </label>
-                        </fieldset>
-                    </form>
+            <article data-theme="generated" aria-label="Generated theme example">
+                <h3><span class="name">Lime </span></h3>
+                <form>
+                    <div class="grid">
+                        <input type="text"
+                               name="login"
+                               placeholder="Login"
+                               aria-label="Login"
+                               autocomplete="nickname"
+                               required="">
+                        <input type="password"
+                               name="password"
+                               placeholder="Password"
+                               aria-label="Password"
+                               autocomplete="current-password"
+                               required="">
+                        <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login
+                        </button>
+                    </div>
+                    <fieldset>
+                        <label for="remember">
+                            <input type="checkbox"
+                                   role="switch"
+                                   id="remember"
+                                   name="remember"
+                                   checked="checked"> Remember me
+                        </label>
+                    </fieldset>
+                </form>
 
-                    <footer class="code">
+                <footer class="code">
 <pre><code><em>// Simplified example</em>
 <b>:root</b> {
-  <i>--primary</i>: <u class="c600">#c0ca33</u>;
+<i>--primary</i>: <u class="c600">#c0ca33</u>;
 }
 </code></pre>
-                    </footer>
+                </footer>
 
-                </article>
+            </article>
 
-            </div><!-- customization -->
+        </div><!-- customization -->
 
-        </div><!-- role document -->
+    </div>
 
-        <article>
+    <article>
 
-            <p>There are 2 ways to customize your version of Pico.css:</p>
-            <h3>Overriding CSS variables</h3>
-            <p>All Pico's styles and colors are set with <em>CSS custom properties</em> (variables). Just override the CSS variables to customize your version of Pico.</p>
+        <h3>Overriding CSS variables</h3>
+        <p>The XCL Theme includes some components of X-layout and
+            the CSS overrides some elements that are listed below.</p>
+        <p>First of all, Pico's styles and colors are set with <em>CSS custom properties</em> (variables).
+            Just override the CSS variables to customize your version of theme PicoCSS.</p>
 
-            <pre><code><em>/* <span class="name">Lime </span>Light scheme (Default) */
+        <pre><code><em>/* <span class="name">Lime </span>Light scheme (Default) */
 /* Can be forced with data-theme="light" */</em>
 <b>[data-theme=<u>"light"</u>]</b>,
 <b>:root:not([data-theme=<u>"dark"</u>])</b> {
-  <i>--primary</i>: <u class="c600">#c0ca33</u>;
-  <i>--primary-hover</i>: <u class="c700">#afb42b</u>;
-  <i>--primary-focus</i>: <u class="c600-outline-light">rgba(192, 202, 51, 0.125)</u>;
-  <i>--primary-inverse</i>: <u class="inverse">rgba(0, 0, 0, 0.75)</u>;
+<i>--primary</i>: <u class="c600">#c0ca33</u>;
+<i>--primary-hover</i>: <u class="c700">#afb42b</u>;
+<i>--primary-focus</i>: <u class="c600-outline-light">rgba(192, 202, 51, 0.125)</u>;
+<i>--primary-inverse</i>: <u class="inverse">rgba(0, 0, 0, 0.75)</u>;
 }
 
 <em>/* <span class="name">Lime </span>Dark scheme (Auto) */
 /* Automatically enabled if user has Dark mode enabled */</em>
 <i>@media</i> only <b>screen</b> and <b>(prefers-color-scheme: <u>dark</u>)</b> {
-  <b>:root:not([data-theme=<u>"light"</u>])</b> {
-    <i>--primary</i>: <u class="c600">#c0ca33</u>;
-    <i>--primary-hover</i>: <u class="c500">#cddc39</u>;
-    <i>--primary-focus</i>: <u class="c600-outline-dark">rgba(192, 202, 51, 0.25)</u>;
-    <i>--primary-inverse</i>: <u class="inverse">rgba(0, 0, 0, 0.75)</u>;
-  }
+<b>:root:not([data-theme=<u>"light"</u>])</b> {
+<i>--primary</i>: <u class="c600">#c0ca33</u>;
+<i>--primary-hover</i>: <u class="c500">#cddc39</u>;
+<i>--primary-focus</i>: <u class="c600-outline-dark">rgba(192, 202, 51, 0.25)</u>;
+<i>--primary-inverse</i>: <u class="inverse">rgba(0, 0, 0, 0.75)</u>;
+}
 }
 
 <em>/* <span class="name">Lime </span>Dark scheme (Forced) */
 /* Enabled if forced with data-theme="dark" */</em>
 <b>[data-theme=<u>"dark"</u>]</b> {
-  <i>--primary</i>: <u class="c600">#c0ca33</u>;
-  <i>--primary-hover</i>: <u class="c500">#cddc39</u>;
-  <i>--primary-focus</i>: <u class="c600-outline-dark">rgba(192, 202, 51, 0.25)</u>;
-  <i>--primary-inverse</i>: <u class="inverse">rgba(0, 0, 0, 0.75)</u>;
+<i>--primary</i>: <u class="c600">#c0ca33</u>;
+<i>--primary-hover</i>: <u class="c500">#cddc39</u>;
+<i>--primary-focus</i>: <u class="c600-outline-dark">rgba(192, 202, 51, 0.25)</u>;
+<i>--primary-inverse</i>: <u class="inverse">rgba(0, 0, 0, 0.75)</u>;
 }
 
 <em>/* <span class="name">Lime </span>(Common styles) */</em>
 <b>:root</b> {
-  <i>--form-element-active-border-color</i>: <u>var</u>(<i>--primary</i>);
-  <i>--form-element-focus-color</i>: <u>var</u>(<i>--primary-focus</i>);
-  <i>--switch-color</i>: <u>var</u>(<i>--primary-inverse</i>);
-  <i>--switch-checked-background-color</i>: <u>var</u>(<i>--primary</i>);
+<i>--form-element-active-border-color</i>: <u>var</u>(<i>--primary</i>);
+<i>--form-element-focus-color</i>: <u>var</u>(<i>--primary-focus</i>);
+<i>--switch-color</i>: <u>var</u>(<i>--primary-inverse</i>);
+<i>--switch-checked-background-color</i>: <u>var</u>(<i>--primary</i>);
 }
 </code></pre>
 
-            <p>You can find all the CSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css">css/themes/default.css</a></p>
-            
+        <p>You can find all the PicoCSS variables used in the default theme here: <a href="https://github.com/picocss/pico/blob/master/css/themes/default.css" target="_blank" rel="noopener">css/themes/default.css</a></p>
 
-            </article>
 
-        </section>
+        </article>
 
-        <aside>
+        <h2 id="components">CSS Variables and Components</h2>
+        <p>CSS overrides and components implemented in XCL Theme PicoCSS.</p>
 
-            <h3>
-                XCL Theme PicoCSS<br>
-            </h3>
-            <p>Theme built with PicoCSS including templates for modules of XCL bundle package.</p>
-            <div class="grid-left theme-info">
-                <div>
-                    <svg class="icon-bundle" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M2 21.4V2.6a.6.6 0 01.6-.6h18.8a.6.6 0 01.6.6v6.8a.6.6 0 01-.6.6H10.6a.6.6 0 00-.6.6v10.8a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6zM16 10V7M10 10V7M10 16H7M10 10H7" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                    THEME</div> <div>XCL PicoCSS</div>
-                <div>
-                    <svg class="icon-bundle" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M2.695 7.185l9 4 .61-1.37-9-4-.61 1.37zM12.75 21.5v-11h-1.5v11h1.5zm-.445-10.315l9-4-.61-1.37-9 4 .61 1.37z" fill="currentColor"></path><path d="M3 17.11V6.89a.6.6 0 01.356-.548l8.4-3.734a.6.6 0 01.488 0l8.4 3.734A.6.6 0 0121 6.89v10.22a.6.6 0 01-.356.548l-8.4 3.734a.6.6 0 01-.488 0l-8.4-3.734A.6.6 0 013 17.11z" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.5 4.5l8.644 3.842a.6.6 0 01.356.548v3.61" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                    Version</div>  <div>XCL Bundle Package 2.3.x</div>
-                <div>
-                    <svg class="icon-code" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M10 17h-.667a2 2 0 01-2-2v-1.889C7.333 12.556 6 12 6 12s1.333-.556 1.333-1.111V9a2 2 0 012-2H10M14 17h.667a2 2 0 002-2v-1.889C16.667 12.556 18 12 18 12s-1.333-.556-1.333-1.111V9a2 2 0 00-2-2H14" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 3.6v16.8a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6V3.6a.6.6 0 01.6-.6h16.8a.6.6 0 01.6.6z" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                    Render</div> <div>Smarty Template Engine</div>
-                <div>
-                    <svg class="icon-template" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M3.6 3h16.8a.6.6 0 01.6.6v16.8a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6V3.6a.6.6 0 01.6-.6zM9.75 9.75V21M3 9.75h18" stroke="currentColor" stroke-width="0.96"></path></svg>
-                    Templates</div> <div>D3 Forum, Pico, and core modules</div>
-                <div>
-                    <svg class="icon-lang" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M2 5h7m7 0h-2.5M9 5h4.5M9 5V3m4.5 2c-.82 2.735-2.539 5.32-4.5 7.593M4 17.5c1.585-1.359 3.376-3.026 5-4.907m0 0C8 11.5 6.4 9.3 6 8.5m3 4.093l3 2.907M13.5 21l1.143-3m6.857 3l-1.143-3m-5.714 0l2.857-7.5 2.857 7.5m-5.714 0h5.714" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-                    Language</div> <div>English, multi-Language</div>
-            </div>
+        <p><button aria-busy="true">Updating Components. Please wait…</button></p>
+
+        <article id="theme-blockquote">
+            <h3>Blockquote</h3>
+            <p>Use blockquote with footer cite.</p>
             <blockquote>
-                Smarty is a template engine for PHP, facilitating the separation of presentation (HTML/CSS) from application logic.
-            </blockquote>
-            <p><button aria-busy="true">Please wait…</button></p>
-            <article class="side-right">
-                <hgroup><h1>Themes</h1><h2>Pico is shipped with 2 consistent themes: Light &amp; Dark.</h2></hgroup>
-                <p>The Light theme is used by default. The Dark theme is automatically enabled if the user has dark mode enabled
-                    <code><i>prefers-color-scheme</i>: <u>dark</u></code></p>
-                <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or
-                    on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code></p>
-            </article>
+            “What you leave behind is not what is engraved in stone monuments, but what is woven into the lives of others.”
+            <footer><cite>― Pericles</cite></footer>
+        </blockquote>
+        </article>
 
-            <article data-theme="dark" aria-label="Forced dark theme example"><h3>Dark theme</h3>
-                <form class="grid">
-                    <input type="text"
-                           name="login"
-                           placeholder="Login"
-                           aria-label="Login"
-                           autocomplete="nickname"
-                           required="">
-                    <input type="password"
-                           name="password"
-                           placeholder="Password"
-                           aria-label="Password"
-                           autocomplete="current-password"
-                           required="">
-                    <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
-                </form>
-
-                <footer class="code">
-<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
-  …
-&lt;/<b>article</b>&gt;</code></pre>
-                </footer>
-            </article>
-
-
-            <article data-theme="light" aria-label="Forced light theme example"><h3>Light theme</h3>
-                <form class="grid">
-                    <input type="text"
-                           name="login"
-                           placeholder="Login"
-                           aria-label="Login"
-                           autocomplete="nickname"
-                           required="">
-                    <input type="password"
-                           name="password"
-                           placeholder="Password"
-                           aria-label="Password"
-                           autocomplete="current-password"
-                           required="">
-                    <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
-                </form>
-                <footer class="code">
-<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
-  …
-&lt;/<b>article</b>&gt;</code></pre>
-                </footer>
-            </article>
-
+        <article id="theme-figure">
+            <h3>Figure and Caption</h3>
+            <p>Use <code>figure</code> tag to wrap an image, and <code>figcaption</code> to provide a caption.
+            Example SVG placeholder.</p>
             <figure>
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 300 150">
                     <defs>
@@ -354,6 +333,7 @@
                 </svg>
                 <figcaption>Every Legacy Begins with a Dream. What's Yours?</figcaption>
             </figure>
+
             <figure>
                 <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
                     <path fill="#817c70" d="M0 0h1024v1024H0z" />
@@ -369,85 +349,15 @@
                     <text fill="#d7d7d2" font-family="sans-serif" font-size="100%" dy="2" font-weight="bold" x="45%" y="70%" text-anchor="middle">Legacy to Remind Us of Where We Come From</text>
                 </svg>
             </figure>
-            <blockquote>
-            “What you leave behind is not what is engraved in stone monuments, but what is woven into the lives of others.”
-                <footer><cite>― Pericles</cite></footer>
-            </blockquote>
-
-            <h3>Dropdown</h3>
-            <p></p>
-            <div>
-                <h4 class="block-title">
-                    Main Menu
-                    <div class="dropdown">
-                        <a href="#" class="dropdown-toggle" aria-label="Edit">
-                            <svg xmlns="http://www.w3.org/2000/svg" role="img" width="1.25em" height="1.25em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
-                                <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="currentColor"></path>
-                            </svg>
-                        </a>
-                        <div class="dropdown-content">
-                            <a href="#!">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" fill="currentColor"></path>
-                                    <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
-                                </svg> Edit <span class="badge">B-id</span></a>
-                            <a href="#!">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path d="M14 12h5.5L14 6.5V12M8 5h7l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3h5v2l4-3l-4-3v2H6V7a2 2 0 0 1 2-2m5.5-2H4v13h2v2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h7.5l2 2z" fill="currentColor"></path>
-                                    <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)"></rect>
-                                </svg> Clone Block</a>
-                            <a href="#">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
-                                    <path d="M12.89 3l1.96.4L11.11 21l-1.96-.4L12.89 3m6.7 9L16 8.41V5.58L22.42 12L16 18.41v-2.83L19.59 12M1.58 12L8 5.58v2.83L4.41 12L8 15.58v2.83L1.58 12z" fill="currentColor"></path>
-                                    <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
-                                </svg> <span>Edit template</span></a>
-                        </div>
-                    </div>
-                </h4>
-            </div>
+        </article>
 
 
-            <h4>Grid</h4>
-            <div class="grid">
-                <div>Grid item 1</div>
-                <div>Grid item 2</div>
-                <div>Grid item 3</div>
-                <div>Grid item 4</div>
-            </div>
 
-            <h4>Grid-2</h4>
-            <div class="grid-2">
-                <div>Grid item 1</div>
-                <div>Grid item 2</div>
-                <div>Grid item 3</div>
-                <div>Grid item 4</div>
-            </div>
-
-            <h4>Grid-3</h4>
-            <div class="grid-3">
-                <div>Grid item 1</div>
-                <div>Grid item 2</div>
-                <div>Grid item 3</div>
-                <div>Grid item 4</div>
-            </div>
-
-            <h4>Grid-left</h4>
-            <div class="grid-left">
-                <div>Grid item 1</div>
-                <div>Grid item 2</div>
-                <div>Grid item 3</div>
-                <div>Grid item 4</div>
-            </div>
-            <h4>Grid-right</h4>
-            <div class="grid-right">
-                <div>Grid item 1</div>
-                <div>Grid item 2</div>
-                <div>Grid item 3</div>
-                <div>Grid item 4</div>
-            </div>
-
+        <article id="theme-group">
             <h3>Button Group - primary</h3>
-            <p>Used with <code>&lt;<b>div</b> <i>role</i>="<u>group</u>"&gt;</code> for <code><i>class</i>="<u>action-control</u>"</code> and to style ui-tabs.</p>
+            <p>Group is used with <code>&lt;<b>div</b> <i>role</i>="<u>group</u>"&gt;</code> for <code><i>class</i>="<u>action-control</u>"</code> and style of ui-tabs.</p>
+
+
             <div role="group" aria-label="Action Control">
                 <a role="button" class="primary new" href="#!" title="Edit">New</a>
                 <a role="button" class="primary edit" href="#!" title="Edit">Edit</a>
@@ -470,31 +380,366 @@
                 <a role="button" class="outline delete" href="#!" title="Edit">Delete</a>
                 <a role="button" class="outline cancel" href="#!" title="Edit">Cancel</a>
             </div>
+        </article>
 
-            <h3>Pagination</h3>
-            <p>The Smarty plugin automatically generates the page navigation.
-                Thus allowing to use a CSS container class "pagination" and to easily customize the generated list "pagenavi".
-            </p>
-                <div class="pagination" aria-label="pagination">
-                    <ul class="pagenavi" style="place-content: center;">
-                        <li><a href="#!">1</a></li>
-                        <li><strong>2</strong></li>
-                        <li><a href="#!">3</a></li>
-                        <li><a href="#!" class="next">»</a></li>
-                    </ul>
+        <article id="theme-dropdown">
+        <h3>Dropdown</h3>
+        <p>This component of X-layout requires jQuery and it is used to render action-control.</p>
+        <div>
+            <h4 class="block-title">
+                Main Menu
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" aria-label="Edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="1.25em" height="1.25em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                            <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="currentColor"></path>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" fill="currentColor"></path>
+                                <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
+                            </svg> Edit <span class="badge">B-id</span></a>
+                        <a href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M14 12h5.5L14 6.5V12M8 5h7l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3h5v2l4-3l-4-3v2H6V7a2 2 0 0 1 2-2m5.5-2H4v13h2v2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h7.5l2 2z" fill="currentColor"></path>
+                                <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)"></rect>
+                            </svg> Clone Block</a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M12.89 3l1.96.4L11.11 21l-1.96-.4L12.89 3m6.7 9L16 8.41V5.58L22.42 12L16 18.41v-2.83L19.59 12M1.58 12L8 5.58v2.83L4.41 12L8 15.58v2.83L1.58 12z" fill="currentColor"></path>
+                                <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
+                            </svg> <span>Edit template</span></a>
+                    </div>
                 </div>
+            </h4>
+        </div>
+        </article>
+
+        <article id="theme-grid">
+
+        <h3>Grid</h3>
+        <p>The default grid creates a column for each child div in the parent element.</p>
+        <div class="grid">
+            <div>div 1</div>
+            <div>div 2</div>
+            <div>div 3</div>
+            <div>div 4</div>
+        </div>
+
+        <h4>Grid-2</h4>
+        <p>The class "grid-2" creates two columns, each occupying 50% of a parent element.</p>
+        <div class="grid-2">
+            <div>div 1</div>
+            <div>div 2</div>
+            <div>div 3</div>
+            <div>div 4</div>
+        </div>
+
+        <h4>Grid-3</h4>
+        <p>The class "grid-3" creates three columns for all child divs.</p>
+        <div class="grid-3">
+            <div>div 1</div>
+            <div>div 2</div>
+            <div>div 3</div>
+            <div>div 4</div>
+        </div>
+
+        <h4>Grid-left</h4>
+        <p>The class "grid-left" creates a first column width 1fr and second 3fr.</p>
+        <div class="grid-left">
+            <div>div 1</div>
+            <div>div 2</div>
+            <div>div 3</div>
+            <div>div 4</div>
+        </div>
+
+        <h4>Grid-right</h4>
+        <p>The class "grid-right" creates a first column width 3f and second 3fr.</p>
+        <div class="grid-right">
+            <div>div 1</div>
+            <div>div 2</div>
+            <div>div 3</div>
+            <div>div 4</div>
+        </div>
+        </article>
+
+
+
+        <article id="theme-pagination">
+        <header><div class="headings">
+            <h3>Pagination</h3>
+        <p>The Smarty plugin automatically generates the page navigation.
+            Thus allowing to use a CSS container class "pagination" and to easily customize the generated list "pagenavi".
+        </p></div>
+        </header>
+        <div class="pagination" aria-label="pagination">
+            <ul class="pagenavi" style="place-content: center;">
+                <li><a href="#!">1</a></li>
+                <li><strong>2</strong></li>
+                <li><a href="#!">3</a></li>
+                <li><a href="#!" class="next">»</a></li>
+            </ul>
+        </div>
 
         <pre><code>&lt;<b>ul</b> <i>class</i>=<u>"pagenavi"</u>&gt;
     &lt;<b>li</b>&gt;---&lt;<b>li</b>&gt;
 &lt;/<b>ul</b>&gt;</code></pre>
+        </article>
+
+    </section>
+
+    <aside>
+
+        <h2 id="theme-pico">XCL Theme PicoCSS</h2>
+        <p>Theme built with PicoCSS including templates for modules of XCL bundle package.</p>
+
+        <div class="grid-left theme-info">
+            <div>
+                <svg class="icon-bundle" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M2 21.4V2.6a.6.6 0 01.6-.6h18.8a.6.6 0 01.6.6v6.8a.6.6 0 01-.6.6H10.6a.6.6 0 00-.6.6v10.8a.6.6 0 01-.6.6H2.6a.6.6 0 01-.6-.6zM16 10V7M10 10V7M10 16H7M10 10H7" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                THEME</div> <div>XCL PicoCSS</div>
+            <div>
+                <svg class="icon-bundle" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M2.695 7.185l9 4 .61-1.37-9-4-.61 1.37zM12.75 21.5v-11h-1.5v11h1.5zm-.445-10.315l9-4-.61-1.37-9 4 .61 1.37z" fill="currentColor"></path><path d="M3 17.11V6.89a.6.6 0 01.356-.548l8.4-3.734a.6.6 0 01.488 0l8.4 3.734A.6.6 0 0121 6.89v10.22a.6.6 0 01-.356.548l-8.4 3.734a.6.6 0 01-.488 0l-8.4-3.734A.6.6 0 013 17.11z" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path><path d="M7.5 4.5l8.644 3.842a.6.6 0 01.356.548v3.61" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                Version</div>  <div>XCL Bundle Package 2.3.x</div>
+            <div>
+                <svg class="icon-code" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M10 17h-.667a2 2 0 01-2-2v-1.889C7.333 12.556 6 12 6 12s1.333-.556 1.333-1.111V9a2 2 0 012-2H10M14 17h.667a2 2 0 002-2v-1.889C16.667 12.556 18 12 18 12s-1.333-.556-1.333-1.111V9a2 2 0 00-2-2H14" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path><path d="M21 3.6v16.8a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6V3.6a.6.6 0 01.6-.6h16.8a.6.6 0 01.6.6z" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                Render</div> <div>Smarty Template Engine</div>
+            <div>
+                <svg class="icon-template" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M3.6 3h16.8a.6.6 0 01.6.6v16.8a.6.6 0 01-.6.6H3.6a.6.6 0 01-.6-.6V3.6a.6.6 0 01.6-.6zM9.75 9.75V21M3 9.75h18" stroke="currentColor" stroke-width="0.96"></path></svg>
+                Templates</div> <div>D3 Forum, Pico, and core modules</div>
+            <div>
+                <svg class="icon-lang" width="1.25em" height="1.25em" stroke-width="0.96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" color="currentColor"><path d="M2 5h7m7 0h-2.5M9 5h4.5M9 5V3m4.5 2c-.82 2.735-2.539 5.32-4.5 7.593M4 17.5c1.585-1.359 3.376-3.026 5-4.907m0 0C8 11.5 6.4 9.3 6 8.5m3 4.093l3 2.907M13.5 21l1.143-3m6.857 3l-1.143-3m-5.714 0l2.857-7.5 2.857 7.5m-5.714 0h5.714" stroke="currentColor" stroke-width="0.96" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                Language</div> <div>English, multi-Language</div>
+        </div>
+
+        <blockquote>
+            Smarty is a template engine for PHP, facilitating the separation of presentation (HTML/CSS) from application logic.
+        </blockquote>
+
+        <hr>
+
+        <article class="side-right">
+            <hgroup>
+                <h1>Themes</h1>
+                <h2>Pico is shipped with 2 consistent themes: Light &amp; Dark.</h2></hgroup>
+            <p>The Light theme is used by default. The Dark theme is automatically enabled if the user has dark mode enabled
+                <code><i>prefers-color-scheme</i>: <u>dark</u></code></p>
+            <p>Themes can be forced on document level <code>&lt;<b>html</b> <i>data-theme</i>=<u>"light"</u>&gt;</code> or
+                on any HTML element <code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;</code></p>
+        </article>
+
+        <article data-theme="dark" aria-label="Forced dark theme example"><h3>Dark theme</h3>
+            <form class="grid">
+                <input type="text"
+                       name="login"
+                       placeholder="Login"
+                       aria-label="Login"
+                       autocomplete="nickname"
+                       required="">
+                <input type="password"
+                       name="password"
+                       placeholder="Password"
+                       aria-label="Password"
+                       autocomplete="current-password"
+                       required="">
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
+            </form>
+
+            <footer class="code">
+<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"dark"</u>&gt;
+…
+&lt;/<b>article</b>&gt;</code></pre>
+            </footer>
+        </article>
 
 
+        <article data-theme="light" aria-label="Forced light theme example"><h3>Light theme</h3>
+            <form class="grid">
+                <input type="text"
+                       name="login"
+                       placeholder="Login"
+                       aria-label="Login"
+                       autocomplete="nickname"
+                       required="">
+                <input type="password"
+                       name="password"
+                       placeholder="Password"
+                       aria-label="Password"
+                       autocomplete="current-password"
+                       required="">
+                <button type="submit" aria-label="Example button" onclick="event.preventDefault()">Login</button>
+            </form>
+            <footer class="code">
+<pre><code>&lt;<b>article</b> <i>data-theme</i>=<u>"light"</u>&gt;
+…
+&lt;/<b>article</b>&gt;</code></pre>
+            </footer>
+        </article>
 
-
-        </aside>
+    </aside>
 
     </div>
-</main><!-- ./ Main -->
+
+</main>
+
+<section class="container-fluid block-center">
+
+    <div class="grid-3">
+
+        <div aria-label="column-left">
+            <div class="block-center-left b-0">
+            <h4 data-layout="row center-justify" class="block-title">
+                Private Message
+                <div class="dropdown">
+                    <a href="#" class="dropdown-toggle" aria-label="Edit">
+                        <svg xmlns="http://www.w3.org/2000/svg" role="img" width="1.25em" height="1.25em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                            <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="currentColor"></path>
+                        </svg>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" fill="currentColor"></path>
+                                <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
+                            </svg> Edit <span class="badge">B-id</span></a>
+                        <a href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M14 12h5.5L14 6.5V12M8 5h7l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3h5v2l4-3l-4-3v2H6V7a2 2 0 0 1 2-2m5.5-2H4v13h2v2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h7.5l2 2z" fill="currentColor"></path>
+                                <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)"></rect>
+                            </svg> Clone Block</a>
+                        <a href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                <path d="M12.89 3l1.96.4L11.11 21l-1.96-.4L12.89 3m6.7 9L16 8.41V5.58L22.42 12L16 18.41v-2.83L19.59 12M1.58 12L8 5.58v2.83L4.41 12L8 15.58v2.83L1.58 12z" fill="currentColor"></path>
+                                <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
+                            </svg> <span title="message_block_template.html">Edit template</span></a>
+                    </div>
+                </div>
+            </h4>
+                <nav class="block-messages">
+                    <ul id="privatemessages">
+                        <li>
+                            <a href="#!">
+                                <span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="svg inbox-full" role="img"><path d="M19 15V5H5v10h4c0 1.66 1.34 3 3 3s3-1.34 3-3h4m0-12c1.1 0 2 .9 2 2v14c0 1.1-.9 2-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14M7 13v-2h10v2H7m0-4V7h10v2H7z" fill="currentColor"></path></svg>
+                                    Inbox</span>
+                                <span class="badge"><b style="color:orange">11</b>/15</span>
+                            </a>
+                        </li>
+                        <li>
+                        <a href="#!">
+                            <span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="svg inbox-out" role="img"><path d="M14 14h-4v-3H8l4-4l4 4h-2v3m-9 1V5h14v10h-4a3 3 0 0 1-3 3a3 3 0 0 1-3-3H5M19 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2" fill="currentColor"></path></svg>
+                                Sent Box</span> <span class="badge"> 10</span></a>
+                        </li>
+                        <li>
+                        <a href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" class="svg mail-edit" role="img"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1l2.05 2l1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.557.557 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76c.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4l-8 5l-8-5V6l8 5l8-5" fill="currentColor"></path></svg>
+                            New message</a>
+                        </li>
+                        <li>
+                        <a href="#!">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" class="svg settings" role="img"><path d="M3 17v2h6v-2H3M3 5v2h10V5H3m10 16v-2h8v-2h-8v-2h-2v6h2M7 9v2H3v2h4v2h2V9H7m14 4v-2H11v2h10m-6-4h2V7h4V5h-4V3h-2v6z" fill="currentColor"></path></svg>
+                        Settings</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div aria-label="column-center">
+            <div class="block-center-center b-0">
+                <h4 data-layout="row center-justify" class="block-title">
+                    Welcome
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" aria-label="Edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" role="img" width="1.25em" height="1.25em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#!">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" fill="currentColor"></path>
+                                    <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
+                                </svg> Edit <span class="badge">B-27</span></a>
+                            <a href="#!">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path d="M14 12h5.5L14 6.5V12M8 5h7l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3h5v2l4-3l-4-3v2H6V7a2 2 0 0 1 2-2m5.5-2H4v13h2v2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h7.5l2 2z" fill="currentColor"></path>
+                                    <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)"></rect>
+                                </svg> Clone Block</a>
+                            <a href="#!">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path d="M12.89 3l1.96.4L11.11 21l-1.96-.4L12.89 3m6.7 9L16 8.41V5.58L22.42 12L16 18.41v-2.83L19.59 12M1.58 12L8 5.58v2.83L4.41 12L8 15.58v2.83L1.58 12z" fill="currentColor"></path>
+                                    <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
+                                </svg> <span title="">Edit template</span></a>
+                        </div>
+                    </div>
+                </h4>
+                <div class="block-content"><h2>Welcome to your new website!</h2>
+                    <p>A web application platform that is simple to deploy and to customize with the frameworks of your choice,
+                        modules and blocks, accessible format and expanded search capabilities, simpler navigation, and direct control of your data.&nbsp;</p>
+                </div>
+            </div>
+        </div>
+
+        <div aria-label="column-right">
+            <div class="block-center-right b-0">
+                <h4 data-layout="row center-justify" class="block-title">
+                    Menu
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle" aria-label="Edit">
+                            <svg xmlns="http://www.w3.org/2000/svg" role="img" width="1.25em" height="1.25em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24">
+                                <path d="M12 16a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2m0-6a2 2 0 0 1 2 2a2 2 0 0 1-2 2a2 2 0 0 1-2-2a2 2 0 0 1 2-2z" fill="currentColor"></path>
+                            </svg>
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#!">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83l3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z" fill="currentColor"></path>
+                                    <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
+                                </svg> Edit <span class="badge">B-id</span></a>
+                            <a href="#!">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path d="M14 12h5.5L14 6.5V12M8 5h7l6 6v10a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-3h5v2l4-3l-4-3v2H6V7a2 2 0 0 1 2-2m5.5-2H4v13h2v2H4a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h7.5l2 2z" fill="currentColor"></path>
+                                    <rect x="0" y="0" width="24" height="24" fill="rgba(0, 0, 0, 0)"></rect>
+                                </svg> Clone Block</a>
+                            <a href="#!">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path d="M12.89 3l1.96.4L11.11 21l-1.96-.4L12.89 3m6.7 9L16 8.41V5.58L22.42 12L16 18.41v-2.83L19.59 12M1.58 12L8 5.58v2.83L4.41 12L8 15.58v2.83L1.58 12z" fill="currentColor"></path>
+                                    <rect x="0" y="0" width="1em" height="1em" fill="rgba(0, 0, 0, 0)"></rect>
+                                </svg> <span title="">Edit template</span></a>
+                        </div>
+                    </div>
+                </h4>
+                <div class="block-menu">
+                    <dl>
+                        <dt><a href="#!">TOP</a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="#!" aria-label=":2022/10/9 8:09:03">Readme - information about modules and templates</a></li>
+                                <li><a href="#!" aria-label=":2022/11/11 22:25:20">Release with default theme PicoCSS</a></li>
+                                <li><a href="#!" aria-label=":2022/10/9 1:23:28">Changelog for XOOPSCube Legacy version 240</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><a href="#!">Modules</a></dt>
+                        <dd>
+                            <ul>
+                                <li><a href="#!" aria-label=":2022/10/9 8:03:39">D3Forum and comment management</a></li>
+                                <li><a href="#!" aria-label=":2022/10/9 8:06:12">Pico - Content Management</a></li>
+                                <li><a href="#!" aria-label=":2022/10/13 16:02:38">elFinder - File Management</a></li>
+                                <li><a href="#!" aria-label=":2022/10/18 23:59:27">Update Manager</a></li>
+                            </ul>
+                        </dd>
+                    </dl>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+</section>
 
 <!-- Subscribe -->
 <section aria-label="Subscribe example">

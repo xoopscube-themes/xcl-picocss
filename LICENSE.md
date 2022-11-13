@@ -1,5 +1,6 @@
 MIT License
 
+Copyright (c) 2022 Nuno Luciano
 Copyright (c) 2019-2022 Pico
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
