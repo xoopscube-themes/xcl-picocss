@@ -5,7 +5,7 @@
 
 ## ///// — XCL PicoCSS
 
-![XCL Theme PicoCSS](https://raw.githubusercontent.com/xoopscube-themes/xcl-neumorphic/0c590d76cf1e69b704316bef80e3e8704305a008/xcl-neumorphic%2B114.PNG)
+![XCL Theme PicoCSS](https://repository-images.githubusercontent.com/551270939/1f393a8a-f443-4b8b-9fd4-dd3d29b97604)
 
 ---
 
